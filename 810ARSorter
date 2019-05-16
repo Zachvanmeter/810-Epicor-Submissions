@@ -8,22 +8,6 @@ from pyscreeze import ImageNotFoundException
 
 #pyinstaller -F 810ARSorter.py
 
-'''
-
-Hey all,
-
-I recently gained employment with a company which uses Epicor for Accounts Payable and Accounts Receivable. To my dismay, I discovered that my boss was spending nearly a half an hour each day reviewing which 810 invoices which she was auto-printing simply didnt get processed by Epcior. She was doing this by counting how many .xml files were produced in her reports folder, and then checking how many corresponding .txt files had been produced for EDI to transmit. out of 100, it produced about 90 .txt files.
-
-If my boss didnt babysit this process every day, our company would only be paid for 90% of our invoices! She was using all these pivot tables and work arounds to determine which invoices she would need to resubmit, punch them into Epicor to be printed again, and then triple check to make sure they actually worked properly this time. I'm told the good folks at Epicor had been made aware of this issue by several of their users, but unfortunately, didnt have a good fix for it.
-
-So, I wrote a python script to automate the tedium of double checking which invoices did and did not process, and to resubmit via manual entry the invoices that had failed.
-
-If this sounds like something any of you have had to deal with, take a look at my github script. 
-
-
-'''
-
-
 ## this code will need compiled once for each user
 ## dont forget about the windows dependant operating system stuff below
 
@@ -51,8 +35,15 @@ xmlpath='\\\\TMFSVR9\\EpicorData\\Reports\\%s\\'%(user)
 # screenshot folder. You may need   #
 # to produce these yourself         #
 # ################################# #
-path = 'Resources - 810ARSorter\\'				# For Win 7
+path = 'Resources - 810ARSorter\\'		# For Win 7
 #path = 'Resources - 810ARSorter - Win 10\\'	# For Win 10
+
+
+
+# ###################################
+#####################################
+# ###################################
+#####################################
 
 
 def GenTxtInvoiceNum(lines):	#invoiceNum = GenTxtInvoiceNum(lines)
